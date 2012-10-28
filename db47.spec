@@ -100,11 +100,11 @@ rm -rf $RPM_BUILD_ROOT%{_docdir}/db-*-docs/{api_tcl,articles,collections,csharp,
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p /sbin/ldconfig
-%postun	-p /sbin/ldconfig
+%post	-p /usr/sbin/ldconfig
+%postun	-p /usr/sbin/ldconfig
 
-%post	cxx -p /sbin/ldconfig
-%postun	cxx -p /sbin/ldconfig
+%post	cxx -p /usr/sbin/ldconfig
+%postun	cxx -p /usr/sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
