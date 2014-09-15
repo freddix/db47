@@ -1,7 +1,8 @@
+# based on PLD Linux spec git://git.pld-linux.org/packages/db47.spec
 Summary:	Berkeley DB database library for C
 Name:		db47
 Version:	4.7.25
-Release:	5
+Release:	6
 License:	Sleepycat public license (GPL-like, see LICENSE)
 Group:		Libraries
 Source0:	http://download.oracle.com/berkeley-db/db-%{version}.tar.gz
@@ -9,7 +10,7 @@ Source0:	http://download.oracle.com/berkeley-db/db-%{version}.tar.gz
 Patch0:		http://www.oracle.com/technology/products/berkeley-db/db/update/4.7.25/patch.4.7.25.1
 Patch1:		http://www.oracle.com/technology/products/berkeley-db/db/update/4.7.25/patch.4.7.25.2
 Patch2:		http://www.oracle.com/technology/products/berkeley-db/db/update/4.7.25/patch.4.7.25.3
-Patch3:		http://www.oracle.com/technology/products/berkeley-db/db/update/4.7.20/patch.4.7.25.4
+Patch3:		http://www.oracle.com/technology/products/berkeley-db/db/update/4.7.25/patch.4.7.25.4
 URL:		http://www.oracle.com/technology/products/berkeley-db/db/index.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -95,7 +96,7 @@ install -d $RPM_BUILD_ROOT{%{_includedir},%{_libdir},%{_bindir}}
 	DESTDIR=$RPM_BUILD_ROOT \
 	LIB_INSTALL_FILE_LIST=""
 
-rm -rf $RPM_BUILD_ROOT%{_docdir}/db-*-docs/{api_tcl,articles,collections,csharp,gsg*/JAVA,java,license,porting,ref}
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/db-*-docs/{api_tcl,articles,collections,gsg*/JAVA,java,license,porting,ref}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
